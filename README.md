@@ -1,9 +1,13 @@
-🌌 Introduction
+**🌍 Space Weight Explorer – Discover Your Weight Across the Solar System**
+
+**🌌 Introduction**
+
 Have you ever wondered how much you would weigh on Jupiter, Mars, or even the Moon? Gravity isn’t constant across the solar system — it depends on the mass and radius of each celestial body. Space Weight Explorer is a fun and educational web application that lets you input your Earth weight and instantly see how that weight changes on every planet (and even the Moon or Pluto).
 
 It’s a perfect blend of science + interactivity, designed to spark curiosity about physics and space. Whether you’re a student, teacher, or just someone who’s fascinated by space, this tool helps you visualize gravitational differences with a clean interface and smooth transitions.
 
-💡 What It Does
+**💡 What It Does**
+
 ⚖️ Input Earth Weight: Enter your body weight in kilograms or pounds.
 
 🪐 Instant Weight Conversion: Instantly see how much you’d weigh on:
