@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>🪐 Planet Weight Calculator</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #1f4037, #99f2c8);
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      color: #fff;
+      padding: 2rem;
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.2);
+      padding: 2rem;
+      border-radius: 15px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    input {
+      padding: 10px;
+      font-size: 1rem;
+      margin: 1rem;
+      border-radius: 8px;
+      border: none;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background: #00c9ff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #92fe9d;
+    }
+
+    .results {
+      margin-top: 2rem;
+      text-align: left;
+      font-size: 1.1rem;
+    }
+
+    .planet {
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>🪐 Planet Weight Calculator</h1>
+  <div class="container">
+    <p>Enter your weight on Earth (kg):</p>
+    <input type="number" id="earthWeight" placeholder="e.g., 70" />
+    <button onclick="calculateWeight()">Calculate</button>
+
+    <div class="results" id="output"></div>
+  </div>
+
+  <script>
+    const gravity = {
+      Mercury: 0.38,
+      Venus: 0.91,
+      Earth: 1.00,
+      Moon: 0.166,
+      Mars: 0.38,
+      Jupiter: 2.34,
+      Saturn: 1.06,
+      Uranus: 0.92,
+      Neptune: 1.19,
+      Pluto: 0.06
+    };
+
+    const emojis = {
+      Mercury: "☿️", Venus: "♀️", Earth: "🌍", Moon: "🌖", Mars: "🔴",
+      Jupiter: "🟤", Saturn: "🪐", Uranus: "🔵", Neptune: "🌊", Pluto: "❄️"
+    };
+
+    function calculateWeight() {
+      const weight = parseFloat(document.getElementById("earthWeight").value);
+      const output = document.getElementById("output");
+      output.innerHTML = "";
+
+      if (isNaN(weight) || weight <= 0) {
+        output.innerHTML = "<p>Please enter a valid weight.</p>";
+        return;
+      }
+
+      for (let planet in gravity) {
+        const calculated = (weight * gravity[planet]).toFixed(2);
+        output.innerHTML += `<div class='planet'>${emojis[planet]} <strong>${planet}</strong>: ${calculated} kg</div>`;
+      }
+    }
+  </script>
+</body>
+</html>
